@@ -1,0 +1,1686 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    background: #071220;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* CINEMATIC NAVBAR */
+.cinema-nav {
+    background: rgba(12, 22, 42, 0.35);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 0;
+    transition: all 0.35s ease;
+}
+
+/* NAVBAR SHRINK ON SCROLL */
+.nav-scrolled {
+    padding: 10px 0 !important;
+    background: rgba(6, 14, 28, 0.55);
+    border-bottom: 1px solid rgba(0, 136, 255, 0.25);
+}
+
+/* BRAND */
+.cinema-nav .navbar-brand {
+    font-size: 1.6rem;
+    color: white !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeSlideDown 1.2s ease forwards;
+}
+
+/* NAV LINKS */
+.cinema-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1.05rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+}
+
+/* HOVER COLOR */
+.cinema-link:hover {
+    color: #67b5ff !important;
+}
+
+/* UNDERLINE HOVER EFFECT (CINEMATIC) */
+.cinema-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, #00aaff, #70d7ff);
+    transition: width 0.35s ease;
+    border-radius: 10px;
+}
+
+.cinema-link:hover::after {
+    width: 100%;
+}
+
+/* NAVBAR FADE SLIDE IN */
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* HERO */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parallax background */
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    top: 0;
+    left: 0;
+}
+
+.layer-bg {
+    background: url('../assets/bg3.jpg') center/cover no-repeat;
+    filter: brightness(60%);
+}
+
+/* Glowing diagonal beams */
+.layer-beams::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    /* background: linear-gradient(60deg, rgba(0,122,255,0.25), transparent 70%); */
+    transform: rotate(15deg);
+    filter: blur(40px);
+}
+
+/* Floating morph blob */
+.blob {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(0,91,255,0.55), transparent 50%);
+    filter: blur(100px);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: blobMove 12s infinite ease-in-out alternate;
+}
+
+@keyframes blobMove {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-55%, -48%) scale(1.25); }
+}
+
+/* ==============================
+   INDIVIDUAL RESEARCH PAGE HEROES
+   ============================== */
+
+/* Data Science */
+.ds-hero {
+    background: url('assets/data-bg.jpg') center/cover no-repeat;
+    position: relative;
+    height: 70vh;
+    margin-top: 80px;
+}
+.ds-hero .hero-title { 
+    text-shadow: 0 0 25px rgba(255,255,0,0.9);
+    color: #fff100;
+}
+.ds-hero .hero-subtitle {
+    color: #fffec6;
+    text-shadow: 0 0 15px rgba(255,255,120,0.7);
+}
+
+/* Neural Networks */
+.nn-hero {
+    background: url('assets/nn-bg.jpg') center/cover no-repeat;
+    position: relative;
+    height: 70vh;
+    margin-top: 80px;
+}
+.nn-hero .hero-title {
+    text-shadow: 0 0 25px rgba(255,0,200,0.9);
+    color: #ff4ad4;
+}
+.nn-hero .hero-subtitle {
+    color: #ffc9f4;
+    text-shadow: 0 0 15px rgba(255,100,200,0.7);
+}
+
+/* Quantum Computing */
+.qc-hero {
+    background: url('assets/qc-bg.jpg') center/cover no-repeat;
+    position: relative;
+    height: 70vh;
+    margin-top: 80px;
+}
+.qc-hero .hero-title {
+    text-shadow: 0 0 25px rgba(0,200,255,0.9);
+    color: #00eaff;
+}
+.qc-hero .hero-subtitle {
+    color: #baf7ff;
+    text-shadow: 0 0 15px rgba(80,255,255,0.7);
+}
+
+/* Shared structure */
+.ds-hero .hero-overlay,
+.nn-hero .hero-overlay,
+.qc-hero .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.ds-hero .hero-center,
+.nn-hero .hero-center,
+.qc-hero .hero-center {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+
+/* HERO IMAGE */
+.hero-img {
+    position: absolute;
+    height: 70vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+    filter: brightness(90%);
+}
+
+/* HERO TEXT */
+.hero-text {
+    position: absolute;
+    bottom: 12%;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    color: rgb(255, 255, 255);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.hero-text h1 {
+    font-size: 58px;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(6, 6, 6, 0.6);
+}
+
+.hero-text p {
+    color: #fffefe;
+    font-size: 20px;
+    opacity: 0.85;
+    text-shadow: 0 4px 15px rgba(6, 6, 6, 0.6);
+}
+
+/* ============================================
+   ABOUT SECTION — CINEMATIC GLASS PANEL
+   ============================================ */
+
+#about {
+    position: relative;
+    padding: 140px 0 160px;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 50px;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(18px) saturate(170%);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.55),
+        inset 0 0 30px rgba(255,255,255,0.05);
+}
+
+/* Title */
+#about .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+
+    background: linear-gradient(120deg, #2b2a2a, #000000);
+    -webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;   /* <-- add this */
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 18px rgba(150,180,255,0.5),
+        0 0 50px rgba(80,120,255,0.4);
+}
+
+/* About text */
+.about-text {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 0 0 12px rgba(0,0,0,0.55);
+}
+
+/* Gentle glow fade as scroll */
+#about.visible .about-content {
+    animation: aboutFadeIn 1.4s ease forwards;
+}
+
+@keyframes aboutFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================
+   ACHIEVEMENTS — GLASS + AURORA HYBRID CINEMATIC CARDS
+   ========================================================== */
+
+#achievements {
+    position: relative;
+    padding: 150px 0;
+}
+
+#achievements .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+
+    background: linear-gradient(120deg, #000000, #000000);
+    -webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;   /* <-- add this */
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 20px rgba(140,170,255,0.4),
+        0 0 40px rgba(80,110,255,0.3);
+}
+
+/* Card container */
+.cine-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 28px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.20);
+    backdrop-filter: blur(18px) saturate(190%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 220px;
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.55),
+        inset 0 0 40px rgba(255,255,255,0.05);
+
+    transition: 0.45s ease;
+}
+
+/* Hover lift + glow */
+.cine-card:hover {
+    transform: translateY(-14px) scale(1.02);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.70),
+        inset 0 0 40px rgba(255,255,255,0.06);
+}
+
+/* Inner aurora animation */
+.cine-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        115deg,
+        rgba(90,160,255,0.22),
+        rgba(160,80,255,0.18),
+        rgba(0,190,255,0.22)
+    );
+
+    filter: blur(42px);
+    opacity: 0.9;
+    z-index: -1;
+
+    animation: cardAurora 13s infinite ease-in-out alternate;
+}
+
+@keyframes cardAurora {
+    0% { transform: translateX(-20px) scale(1); }
+    100% { transform: translateX(20px) scale(1.1); }
+}
+
+/* Inner text block */
+.cine-card-inner {
+    width: 65%;
+    z-index: 2;
+}
+
+/* Tag labels */
+.cine-tag {
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Tag colors */
+.cine-tag.blue { background: rgba(80,140,255,0.9); }
+.cine-tag.purple { background: rgba(150,80,255,0.9); }
+.cine-tag.red { background: rgba(255,60,80,0.85); }
+.cine-tag.gold { background: rgba(255,200,60,0.90); }
+
+/* Titles */
+.cine-card h3 {
+    font-size: 1.4rem;
+    margin: 12px 0 10px;
+    color: #000000;
+    text-shadow: 0 0 14px rgba(0,0,0,0.55);
+}
+
+/* Description */
+.cine-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #34373f;
+}
+
+/* Thumbnail image (right side) */
+.cine-thumb {
+    width: 32%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+
+    filter: brightness(0.85) contrast(1.08);
+    box-shadow: 0 0 20px rgba(0,0,0,0.45);
+
+    transition: 0.5s ease;
+}
+
+/* Parallax hover on image */
+.cine-card:hover .cine-thumb {
+    transform: translateY(-6px) scale(1.03);
+    filter: brightness(1) contrast(1.15);
+}
+
+
+/* SECTIONS */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* CARDS */
+.custom-card {
+    background: rgba(255,255,255,0.07);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,122,255,0.2);
+}
+
+/* ==========================================================
+   COURSES — HOLOGRAM AURORA TILES
+   ========================================================== */
+
+#courses {
+    position: relative;
+    padding: 150px 0 160px;
+}
+
+#courses .section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 60px;
+
+    background: linear-gradient(120deg, #000000, #000000);
+    -webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;   /* <-- add this */
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 15px rgba(160,180,255,0.45),
+        0 0 40px rgba(80,120,255,0.35);
+}
+
+/* HOLO CARD: main container */
+.holo-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.55),
+        inset 0 0 40px rgba(255,255,255,0.05);
+
+    transition: 0.45s ease;
+
+    /* subtle breathing animation */
+    animation: holoBreath 6s ease-in-out infinite;
+}
+
+/* Hover lift + glow */
+.holo-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow:
+        0 35px 80px rgba(0,0,0,0.70),
+        inset 0 0 50px rgba(255,255,255,0.06);
+}
+
+/* Animated aurora inside tile */
+.holo-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        130deg,
+        rgba(120,180,255,0.22),
+        rgba(180,100,255,0.18),
+        rgba(0,200,255,0.22)
+    );
+
+    filter: blur(45px);
+    animation: holoAurora 15s infinite ease-in-out alternate;
+}
+
+/* Flickering neon edges */
+.holo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(140,180,255,0.45),
+        rgba(255,255,255,0.15),
+        rgba(100,150,255,0.45)
+    );
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    opacity: 0.45;
+    animation: holoEdge 8s linear infinite;
+}
+
+/* Title */
+.holo-card h4 {
+    color: #000000;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    font-weight: 600;
+
+    text-shadow: 0 4px 15px rgba(0,0,0,0.55);
+}
+
+/* Description */
+.holo-card p {
+    color: #000000;
+    font-size: 0.97rem;
+    line-height: 1.55;
+}
+
+/* ============================
+   KEYFRAMES
+   ============================ */
+
+@keyframes holoBreath {
+    0% { transform: scale(1); opacity: 0.92; }
+    50% { transform: scale(1.015); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.92; }
+}
+
+@keyframes holoAurora {
+    0% { transform: translateX(-20px) scale(1); }
+    100% { transform: translateX(20px) scale(1.12); }
+}
+
+@keyframes holoEdge {
+    0% { filter: hue-rotate(0deg); opacity: 0.55; }
+    100% { filter: hue-rotate(360deg); opacity: 0.55; }
+}
+
+/* ==========================================================
+   CINEMATIC SECTION DIVIDERS (AURORA TRANSITIONS)
+   ========================================================== */
+
+.scene-divider {
+    width: 100%;
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft fading roll */
+.scene-divider::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(240, 245, 255, 0.04),
+        rgba(10, 20, 40, 0.25),
+        rgba(10, 15, 25, 0.55),
+        rgba(5, 8, 18, 0.85)
+    );
+
+    filter: blur(35px);
+    opacity: 0.8;
+}
+
+/* Aurora mist layer */
+.scene-divider::after {
+    content: "";
+    position: absolute;
+    inset: -20px 0 0 0;
+
+    background: conic-gradient(
+        from 60deg,
+        rgba(100,150,255,0.06),
+        rgba(160,90,255,0.07),
+        rgba(0,200,255,0.08),
+        rgba(100,150,255,0.06)
+    );
+    filter: blur(40px);
+
+    animation: dividerAurora 16s ease-in-out infinite alternate;
+}
+
+@keyframes dividerAurora {
+    0% { transform: translateX(-40px) scale(1); }
+    100% { transform: translateX(40px) scale(1.08); }
+}
+
+
+/* =============================
+   CINEMATIC FOOTER — FINAL VERSION
+   ============================= */
+
+.cine-footer {
+    background: radial-gradient(ellipse at top, rgba(8, 20, 40, 0.88) 0%, rgba(4, 10, 20, 1) 70%);
+    padding: 90px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #e8f1ff;
+    text-align: center;
+}
+
+/* Remove ugly white blur at the top */
+.cine-footer::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.015),
+        rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+}
+
+/* Subtle Aurora Wave — FIXED */
+    .cine-footer::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -20%;
+        width: 150%;
+        height: 160px;
+        background: linear-gradient(
+            120deg,
+            rgba(0, 132, 255, 0.12),
+            rgba(0, 230, 255, 0.10),
+            rgba(0, 0, 255, 0.06),
+            transparent
+        );
+        filter: blur(45px);
+        animation: auroraFlow 14s ease-in-out infinite alternate;
+        pointer-events: none;
+    }
+
+    @keyframes auroraFlow {
+        0% {
+            transform: translateX(-20%) translateY(0) skewX(-8deg);
+            opacity: 0.65;
+        }
+        100% {
+            transform: translateX(15%) translateY(-25px) skewX(6deg);
+            opacity: 1;
+        }
+    }
+
+/* =============================
+   TEXT VISIBILITY + CINEMATIC TOUCH-UP
+   ============================= */
+
+.footer-title {
+    font-weight: 700;
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    color: #e8f1ff;
+    text-shadow: 
+        0px 4px 20px rgba(0, 0, 0, 0.75),
+        0px 0px 12px rgba(255, 255, 255, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+Shine Sweep Effect
+.footer-title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform: skewX(-20deg);
+    animation: titleShine 6s infinite ease-in-out;
+}
+
+@keyframes titleShine {
+    0% { left: -150%; }
+    40% { left: 130%; }
+    100% { left: 130%; }
+}
+
+/* Subtitle Text */
+.footer-subtitle {
+    color: #b6c7e0;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* =============================
+   FOOTER LINK STYLING
+   ============================= */
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #cdd9ef;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.35s ease;
+    text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.08);
+    text-shadow: 0 0 12px rgba(255,255,255,0.7);
+}
+
+/* Copyright */
+.footer-copy {
+    margin-top: 30px;
+    color: #8fa2b8;
+    font-size: 0.85rem;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+/* =============================
+   OPTIONAL GLOW PULSE
+   ============================= */
+
+.footer-glow {
+    animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.04); }
+    100% { opacity: 0.55; transform: scale(1); }
+}
+
+/* =============================
+   OPTIONAL CANVAS PARTICLES (if you enable them later)
+   ============================= */
+
+#footerParticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CINEMATIC SECTION DIVIDER (TOP GAP)
+   ========================================= */
+
+.section-divider {
+    height: 120px;
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(8, 20, 40, 0.1),
+        rgba(8, 20, 40, 0.3) 40%,
+        rgba(8, 20, 40, 0)
+    );
+    backdrop-filter: blur(6px);
+}
+
+
+/* =========================================
+   CINEMATIC SECTION DIVIDER (TOP GAP)
+   ========================================= */
+
+.section-divider {
+    height: 120px;
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(8, 20, 40, 0.1),
+        rgba(8, 20, 40, 0.3) 40%,
+        rgba(8, 20, 40, 0)
+    );
+    backdrop-filter: blur(6px);
+}
+
+
+/* =========================================
+   CINEMATIC CONTACT SECTION
+   ========================================= */
+
+.contact-section {
+    padding: 130px 20px 160px;
+    background: url('../assets/bg5.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Spotlight Glow Behind Card */
+.contact-section::after {
+    content: "";
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 330px;
+    background: radial-gradient(circle, rgba(0, 140, 255, 0.30), transparent 70%);
+    filter: blur(70px);
+    z-index: 0;
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   CINEMATIC CONTACT CARD
+   ========================================= */
+
+.contact-card {
+    width: 72%;
+    max-width: 820px;
+    padding: 60px 55px 75px;
+    background: rgba(54, 61, 64, 0.08);
+    backdrop-filter: blur(20px) saturate(190%);
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+    /* CINEMATIC DEPTH */
+    box-shadow:
+        0 45px 60px rgba(0, 0, 0, 0.45),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+/* Card Floating + 3D Tilt */
+.contact-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 55px 90px rgba(0, 0, 0, 0.65),
+        inset 0 0 40px rgba(255,255,255,0.07);
+}
+
+/* Animated Border Glow */
+.contact-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(16, 17, 18, 0.35),
+        rgba(255, 255, 255, 0.10),
+        rgba(42, 44, 46, 0.35)
+    );
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    animation: borderFlow 8s linear infinite;
+}
+
+@keyframes borderFlow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+.contact-title {
+    font-size: 2.55rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #eef5ff;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.contact-subtitle {
+    font-size: 1.15rem;
+    color: #cdd9f1;
+    margin-bottom: 45px;
+    line-height: 1.58;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.55);
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+   ========================================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+}
+
+/* BASE ICON */
+.social {
+    font-size: 1.8rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.18);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #eaf2ff;
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease;
+}
+
+
+/* 🔥 Ripple Flash + Glow */
+.social::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 160%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .3s ease, transform .45s ease;
+}
+
+.social:hover::before {
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1.4);
+}
+
+
+/* 🔥 Lift + Tilt + Glow */
+.social:hover {
+    transform: scale(1.25) translateY(-8px) rotateX(8deg);
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.4),
+        0 0 40px rgba(0,150,255,0.35),
+        inset 0 0 12px rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.35);
+}
+
+
+/* 🔥 Dynamic Gradient Pulse */
+.social:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 150, 255, 0.25),
+        rgba(255, 255, 255, 0.12),
+        rgba(0, 150, 255, 0.25)
+    );
+    animation: iconPulse 2s infinite ease-in-out;
+}
+
+@keyframes iconPulse {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+    100% { filter: hue-rotate(0deg); }
+}
+
+
+/* BRAND COLORS */
+.github:hover { color: #ffffff; }
+.linkedin:hover { color: #0077ff; }
+.instagram:hover { color: #ff0099; }
+.mail:hover { color: #00ffd9; }
+
+/* =========================================================
+   CINEMATIC ACHIEVEMENTS PAGE STYLING
+   ========================================================= */
+
+/* ---------------- HERO ---------------- */
+
+.achievements-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(
+        140deg,
+        rgba(0, 183, 255, 0.25),
+        rgba(0, 119, 255, 0.25),
+        rgba(0, 50, 100, 0.4)
+    );
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../assets/bg3.jpg'); /* your placeholder aura bg */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.6)
+    );
+    backdrop-filter: blur(4px);
+}
+
+.hero-title {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 8px 25px rgba(0,0,0,0.45);
+    animation: slideDown 1.4s ease forwards;
+}
+
+.hero-subtitle {
+    position: relative;
+    margin-top: 10px;
+    color: #dbe9ff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 0.6s;
+}
+
+/* ENTRY ANIMATIONS */
+@keyframes slideDown {
+    from { transform: translateY(-40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------------- SECTION BLOCK ---------------- */
+
+.section-block {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 50px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.3);
+}
+
+/* ---------------- ACHIEVEMENT GRID ---------------- */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 30px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.35s ease;
+    text-align: center;
+
+    box-shadow: 0 8px 35px rgba(0,0,0,0.2),
+                inset 0 0 25px rgba(255,255,255,0.08);
+}
+
+.achievement-card:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+    border-color: rgba(255,255,255,0.35);
+}
+
+.achievement-card .icon {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    color: #8abfff;
+    text-shadow: 0 5px 15px rgba(0,119,255,0.45);
+}
+
+.achievement-card p {
+    font-size: 1.1rem;
+    color: #000;
+}
+
+/* ---------------- LIST STYLE (WORKSHOPS, MEMBERSHIP) ---------------- */
+
+.achievement-list {
+    max-width: 900px;
+    margin: auto;
+    padding-left: 0;
+}
+
+.achievement-list p {
+    font-size: 1.15rem;
+    color: #000000;
+    background: rgba(255,255,255,0.06);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(12px);
+    border-left: 4px solid rgba(0, 140, 255, 0.55);
+    box-shadow: inset 0 0 25px rgba(255,255,255,0.05),
+                0 4px 18px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.achievement-list p:hover {
+    transform: translateX(6px);
+    border-left-width: 6px;
+    background: rgba(255,255,255,0.14);
+}
+
+.bullet {
+    color: #7db8ff;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+/* ---------------- SECTION DIVIDER ---------------- */
+
+.section-divider {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+}
+
+/* ---------------- FADE UP ANIMATION ---------------- */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* CONTACT PAGE HERO */
+.contact-hero {
+  height: 55vh;
+  background: url('../assets/bg3.jpg') center/cover no-repeat fixed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.contact-hero .hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-center {
+  z-index: 2;
+  text-align: center;
+  animation: fadeUp 1.2s ease-in-out;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact-tagline {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+/* CONTACT CARD */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0 120px;
+}
+
+.contact-card {
+  width: 70%;
+  background: rgba(255,255,255,0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(21,130,255,0.25);
+  animation: softPop 0.9s ease-in-out;
+}
+
+.contact-details p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #e8e8e8;
+}
+
+/* SOCIAL ICONS */
+.social-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social {
+  font-size: 1.7rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  background: rgba(255,255,255,0.15);
+  transition: .35s ease;
+}
+
+.social:hover {
+  transform: scale(1.22) translateY(-5px);
+  box-shadow: 0 0 22px rgba(0,255,255,0.5);
+}
+
+/* Animation */
+@keyframes softPop {
+  0% { transform: scale(.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* ======================================
+   CINEMATIC DIVIDER — DARK TECH BEAM
+====================================== */
+.cinematic-divider {
+  width: 100%;
+  height: 95px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.cinematic-divider .line-glow {
+  width: 75%;
+  height: 6px;
+  border-radius: 50px;
+  
+  background: linear-gradient(
+    to right,
+    rgba(10, 15, 30, 0) 0%,
+    rgba(20, 30, 60, 0.95) 20%,
+    rgba(30, 40, 80, 1) 50%,
+    rgba(20, 30, 60, 0.95) 80%,
+    rgba(10, 15, 30, 0) 100%
+  );
+
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(10, 10, 18, 0.45),
+    inset 0 0 30px rgba(0, 0, 0, 0.6);
+
+  filter: blur(1.5px);
+  animation: darkPulse 4.5s ease-in-out infinite;
+}
+
+@keyframes darkPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 28px rgba(0, 0, 0, 0.9),
+      0 0 45px rgba(0, 0, 0, 0.55),
+      inset 0 0 45px rgba(0, 0, 0, 0.75);
+    transform: scaleX(1.02);
+  }
+}
+
+/* ========================================
+   Dropdown Menu - Dark Cinematic Style
+======================================== */
+.dropdown-dark {
+  background: rgba(10, 10, 20, 0.95);
+  border: 1px solid rgba(130, 160, 255, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  animation: fadeUp 0.25s ease-out;
+}
+
+.dropdown-dark .dropdown-item {
+  color: #000000;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.dropdown-dark .dropdown-item:hover {
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 62, 230, 0.25),
+    rgba(41, 57, 229, 0.12)
+  );
+  padding-left: 28px;
+  text-shadow: 0 0 6px rgba(170, 200, 255, 0.45);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   ARTIFICIAL INTELLIGENCE PAGE CINEMATIC STYLING
+======================================================*/
+
+/* HERO SECTION */
+.ai-hero {
+  height: 75vh;
+  width: 100%;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
+    url('../assets/bg3.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 140px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ai-hero h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(253, 255, 255, 0.8);
+  margin: 0;
+  animation: fadeUp 1.2s ease;
+}
+
+.ai-hero p {
+  font-size: 1.3rem;
+  color: #ccf7ff;
+  opacity: 0.9;
+  margin-top: 12px;
+  animation: fadeUp 1.5s ease;
+}
+
+/* Divider */
+.cinematic-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.line-glow {
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(90deg,
+    rgba(0,255,255,0) 0%,
+    rgba(0,255,255,1) 50%,
+    rgba(0,255,255,0) 100%);
+  box-shadow: 0 0 20px #00eaff;
+  margin: 60px 0;
+}
+
+/* MAIN SECTION BLOCKS */
+.section-block {
+  padding: 90px 0;
+  background: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+.section-block:nth-child(even) {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  text-align: center;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 45px;
+  text-shadow: 0 0 12px rgb(255, 251, 251);
+}
+
+/* Research Interests */
+.interest-list {
+  max-width: 850px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
+
+.interest-list li {
+  font-size: 1.2rem;
+  color: #0d0d0e;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.interest-list i {
+  font-size: 1.4rem;
+  color: #090909;
+  text-shadow: 0 0 10px #e8b725;
+}
+
+/* Cards */
+.research-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+  color: #000000;
+}
+
+.research-card:hover {
+  transform: translateY(-10px);
+  border-color: #00eaff;
+  box-shadow: 0 0 22px rgba(0,255,255,0.35);
+}
+
+.research-card h5 {
+  color: #000000;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.research-card p {
+  font-size: 0.95rem;
+  color: #44a6da;
+}
+
+/* GSAP Fade-in Compatibility */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   FINAL RESPONSIVE HERO FIX — CLEAN VERSION
+========================================== */
+
+@media (max-width: 1200px) {
+  #hero {
+    height: 100vh;
+  }
+
+  .hero-img {
+    height: 65vh;
+    top: 55%;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero {
+    height: 100vh;
+  }
+
+  .hero-img {
+    width: 75vw;
+    max-width: 420px;
+    height: auto;
+    bottom: 0;
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  .hero-text {
+    bottom: 26%;
+    width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 100vh;
+  }
+
+  .layer-bg,
+  .layer-beams,
+  .blob {
+    filter: brightness(70%);
+  }
+
+  .hero-img {
+    width: 80vw;
+    max-width: 340px;
+  }
+
+  .hero-text {
+    bottom: 29%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero {
+    height: 100vh;
+  }
+
+  .hero-img {
+    width: 90vw;
+    max-width: 300px;
+  }
+
+  .hero-text {
+    bottom: 30%;
+    width: 92%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-text h1 {
+    font-size: 1.55rem;
+  }
+}
+
+/* Final override — Make sure contact card stays visible */
+.contact-section {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 20 !important;
+}
+
+.contact-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+
+
