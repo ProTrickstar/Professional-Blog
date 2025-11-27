@@ -1681,6 +1681,17 @@ Shine Sweep Effect
   filter: invert(1);
 }
 
+.social-links,
+.social {
+    position: relative;
+    z-index: 20; /* forces icons above overlays / gradients */
+    pointer-events: auto; /* ensures clicks always pass through */
+}
+
+.contact-card {
+    z-index: 25 !important;
+}
+
 
 
 
